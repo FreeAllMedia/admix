@@ -7,13 +7,13 @@ var _libAdmixJs = require("../lib/admix.js");
 var _libAdmixJs2 = _interopRequireDefault(_libAdmixJs);
 
 describe("Admix", function () {
-	var component = undefined;
+	it("should be able to replace tags in a template", function () {
+		var template = (0, _libAdmixJs2["default"])("Hello, <%= something %>!");
 
-	before(function () {
-		component = new _libAdmixJs2["default"]();
-	});
+		var renderedTemplate = template({
+			something: "world"
+		});
 
-	it("should say something", function () {
-		component.saySomething().should.equal("Something");
+		renderedTemplate.should.eql("Hello, world!");
 	});
 });

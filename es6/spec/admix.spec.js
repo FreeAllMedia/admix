@@ -1,13 +1,13 @@
-import Admix from "../lib/admix.js";
+import admix from "../lib/admix.js";
 
 describe("Admix", () => {
-	let component;
+	it("should be able to replace tags in a template", () => {
+		const template = admix("Hello, <%= something %>!");
 
-	before(() => {
-		component = new Admix();
-	});
+		const renderedTemplate = template({
+			something: "world"
+		});
 
-	it("should say something", () => {
-		component.saySomething().should.equal("Something");
+		renderedTemplate.should.eql("Hello, world!");
 	});
 });

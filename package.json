@@ -20,7 +20,9 @@
     "url": "https://github.com/FreeAllMedia/admix/issues"
   },
   "homepage": "https://github.com/FreeAllMedia/admix",
-  "dependencies": {},
+  "dependencies": {
+    "lodash.template": "^3.6.2"
+  },
   "devDependencies": {
     "babel": "^5.5.6",
     "babel-eslint": "^3.1.20",

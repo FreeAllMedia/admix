@@ -3,26 +3,19 @@
 Object.defineProperty(exports, "__esModule", {
 	value: true
 });
+exports["default"] = admix;
 
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+var _lodashTemplate = require("lodash.template");
 
-var Admix = (function () {
-	function Admix() {
-		_classCallCheck(this, Admix);
-	}
+var _lodashTemplate2 = _interopRequireDefault(_lodashTemplate);
 
-	_createClass(Admix, [{
-		key: "saySomething",
-		value: function saySomething() {
-			//do your stuff here
-			return "Something";
-		}
-	}]);
+function admix(rawTemplate) {
+	var template = (0, _lodashTemplate2["default"])(rawTemplate);
+	return function templateRenderer(data) {
+		return template(data);
+	};
+}
 
-	return Admix;
-})();
-
-exports["default"] = Admix;
 module.exports = exports["default"];

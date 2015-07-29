@@ -1,10 +1,8 @@
-export default class Admix {
+import _template from "lodash.template";
 
-	constructor() {
-	}
-
-	saySomething() {
-		//do your stuff here
-		return "Something";
-	}
+export default function admix(rawTemplate) {
+	const template = _template(rawTemplate);
+	return function templateRenderer(data) {
+		return template(data);
+	};
 }
