@@ -1,6 +1,6 @@
 {
   "name": "admix",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "ES6 template renderer",
   "main": "index.js",
   "scripts": {
