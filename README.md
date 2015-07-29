@@ -3,10 +3,11 @@
 ES6 template renderer
 
 ```javascript
-import Admix from "admix";
+import admix from "admix";
 
-const admix = new Admix;
-admix.saySomething(); // will output "Something"
+const template = admix("Hello, <%= someTag %>!");
+
+template({someTag: "world"}); // "Hello, world!"
 ```
 
 # Quality and Compatibility
@@ -59,6 +60,16 @@ define(["require"] , function (require) {
 
 # Getting Started
 
+With admix, you provide a template in string format containing tags delimited by `<%=` and `%>`.
+
+```javascript
+import admix from "admix";
+
+const template = admix("Hello, <%= someTag %>!");
+
+template({someTag: "world"}); // "Hello, world!"
+```
+
 ## More insights
 
 In order to say something, you should know that `admix()` ... (add your test here)
@@ -78,5 +89,3 @@ It's easy to run the test suite locally, and *highly recommended* if you're usin
 ```
 npm test
 ```
-
-
