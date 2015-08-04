@@ -10,4 +10,12 @@ describe("Admix", () => {
 
 		renderedTemplate.should.eql("Hello, world!");
 	});
+
+	it("should error when a tag is unused in the template", () => {
+		const template = admix("Hello, <%= something %>!");
+
+		() => {
+			template();
+		}.should.throw();
+	});
 });
