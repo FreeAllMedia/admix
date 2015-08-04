@@ -16,4 +16,12 @@ describe("Admix", function () {
 
 		renderedTemplate.should.eql("Hello, world!");
 	});
+
+	it("should error when a tag is unused in the template", function () {
+		var template = (0, _libAdmixJs2["default"])("Hello, <%= something %>!");
+
+		(function () {
+			template();
+		}).should["throw"]();
+	});
 });
